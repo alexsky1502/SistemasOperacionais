@@ -8,16 +8,16 @@ int main(){
 
     int** matriz = (int**) malloc(tamanho * sizeof(int*));
     
-    for (i = 0; i <= tamanho; i++)
+    for (i = 0; i < tamanho; i++)
         matriz[i] = (int*)malloc(tamanho * sizeof(int));
 
-    for (i = 0; i <= tamanho; i++){
+    for (i = 0; i < tamanho; i++){
         for (j = 0; j < tamanho; j++){
             matriz[i][j] = j+1*10;
         }
     }
 
-    for (i = 1; i <= tamanho; i++){
+    for (i = 0; i < tamanho; i++){
         for (j = 0; j < tamanho; j++){
             printf("| %d |", matriz[i][j]);
         }
@@ -29,16 +29,16 @@ int main(){
 
     printf("\nMultiplicando linha %d e coluna %d por %d: \n", linha, linha, valor);
 
-    for (i = 1; i <= tamanho; i++){
+    for (i = 1; i < tamanho; i++){
         matriz[linha][i] *= valor;
     }
 
 
-    for (i = 1; i <= tamanho; i++){
+    for (i = 1; i < tamanho; i++){
         matriz[i][linha] *= valor;
     }
 
-    for (i = 1; i <= tamanho; i++){
+    for (i = 0; i < tamanho; i++){
         for (j = 0; j < tamanho; j++){
             printf("| %d |", matriz[i][j]);
         }
