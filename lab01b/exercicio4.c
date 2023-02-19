@@ -3,7 +3,7 @@
 
 int main(){
     char nome[50], nome2[50];
-    printf("digitar dois nomes separados em espaco (i.e, [Alex Gabriel]: ");
+    printf("digitar dois nomes separados em espaco (i.e, [Alex Gabriel]): ");
     scanf("%s %s", &nome, &nome2);
     if(strcmp(nome, nome2) < 0){
         printf(nome);

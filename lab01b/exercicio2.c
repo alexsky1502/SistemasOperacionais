@@ -2,7 +2,7 @@
 
 int main(){
     float n1, n2, n3, media;
-    printf("digitar os tres numeros separados por um espaco (i.e, 3 4 5: ");
+    printf("digitar os tres numeros separados por um espaco (i.e, 3 4 5): ");
     scanf("%f %f %f", &n1, &n2, &n3);
     media = (n1 + n2*2 + n3*3)/7;
     if(media < 4){

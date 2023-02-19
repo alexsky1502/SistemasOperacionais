@@ -8,14 +8,23 @@ int main(void) {
         }
     }
 
+    //print matriz de entrada
+    printf("\n");
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 3; j++){
+            printf("%d ", matriz[i][j]);
+        } printf("\n");
+    }
+
     //mudar para transposta
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < 3; j++){
-            matriz[i][j] = matrizT[j][i];
+            matrizT[j][i] = matriz[i][j];
         }
     }
 
-    //print
+    //print da transposta
+    printf("\n");
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 2; j++){
             printf("%d ", matrizT[i][j]);
