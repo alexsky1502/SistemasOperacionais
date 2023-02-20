@@ -10,7 +10,6 @@ int** multiplicaLinha(int **matriz, int n, int m, int linha_multi, int n_multipl
             }
         }
     }
-    printf("entrou");
     return matriz;
 }
 
@@ -34,6 +33,7 @@ int** criaMatriz(){
 
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < 3; j++){
+            printf("digite o valor: ");
             scanf("%d", &matriz[i][j]);
         }
     }
@@ -54,9 +54,22 @@ int main(void){
     }
 
     matriz = multiplicaLinha(matriz, 2, 3, 1, 2);
+    printf("\nmultiplicacao da 2 linha por 2\n");
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 3; j++){
+            printf("%d ", matriz[i][j]);
+        } printf("\n");
+    }
+    
     matriz = multiplicaColuna(matriz, 2, 3, 1, 2);
+    printf("\nmultiplicacao da 2 coluna por 2\n");
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 3; j++){
+            printf("%d ", matriz[i][j]);
+        } printf("\n");
+    }
 
-    //print matriz transposta 
+    //print matriz 
     printf("\n");
     for(int i = 0; i < 2; i++) {
         for(int j = 0; j < 3; j++){
