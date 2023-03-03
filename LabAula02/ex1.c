@@ -9,5 +9,5 @@ int main(int argc, char *argv[]){
 	file = fopen(argv[1], "r");
 	fgets(texto, sizeof(texto), file);
 	printf("%s", texto);
-
+	fclose(file);
 }
