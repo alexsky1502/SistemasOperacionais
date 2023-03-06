@@ -2,19 +2,19 @@
 
 ## Exercício 1
 
-Linha 7 e 11 - printf() - write() 
-Linha 9 - fopen() - open()
-linha 10 - fgets() - read()
-Linha 12 - fclose() - close()
+- Linha 7 e 11 - printf() - write() 
+- Linha 9 - fopen() - open()
+- linha 10 - fgets() - read()
+- Linha 12 - fclose() - close()
 
 ## Exercício 2
 
-Linha 7 - printf() - write() 
-linha 10 - fgets() - read()
-Linha 13 - fprintf() - write()
-Linhas 9 e 12 - fopen() - open()
-Linha 13 - fprintf() - write()
-Linha 15 e 16 - fclose() - close()
+- Linha 7 - printf() - write() 
+- linha 10 - fgets() - read()
+- Linha 13 - fprintf() - write()
+- Linhas 9 e 12 - fopen() - open()
+- Linha 13 - fprintf() - write()
+- Linha 15 e 16 - fclose() - close()
 
 # Modo de execução
 
