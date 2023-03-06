@@ -3,6 +3,7 @@
 ## Exercício 1
 
 - Linha 7 e 11 - printf() - write() 
+- Linha 8 - exit() - exit()
 - Linha 9 - fopen() - open()
 - linha 10 - fgets() - read()
 - Linha 12 - fclose() - close()
@@ -10,6 +11,7 @@
 ## Exercício 2
 
 - Linha 7 - printf() - write() 
+- Linha 8 - exit() - exit()
 - linha 10 - fgets() - read()
 - Linha 13 - fprintf() - write()
 - Linhas 9 e 12 - fopen() - open()

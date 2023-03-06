@@ -5,6 +5,7 @@ int main(int argc, char *argv[]){
 	FILE* file;
 	if (argv[1] == NULL) {
 		printf("modo de uso: ./cat /path/to/file");
+		exit(1);
 	} 
 	file = fopen(argv[1], "r");
 	fgets(texto, sizeof(texto), file);
