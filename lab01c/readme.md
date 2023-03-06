@@ -2,20 +2,19 @@
 
 ## Exercício 1
 
-- Linha 7 e 11 - printf() - write() 
-- Linha 8 - exit() - exit()
-- Linha 9 - fopen() - open()
-- linha 10 - fgets() - read()
-- Linha 12 - fclose() - close()
+- Linha 9 e 15- printf() - write() 
+- Linha 9 - exit() - exit()
+- Linha 11 - fopen() - open()
+- linha 13 e 16- fgetc() - read()
+- Linha 19 - fclose() - close()
 
 ## Exercício 2
 
-- Linha 7 - printf() - write() 
-- Linha 8 - exit() - exit()
-- linha 10 - fgets() - read()
-- Linha 13 - fprintf() - write()
-- Linhas 9 e 12 - fopen() - open()
-- Linha 13 - fprintf() - write()
+- Linha 8 - printf() - write() 
+- Linha 9 - exit() - exit()
+- Linhas 11 e 12 - fopen() - open()
+- linha 14 e 17 - fgetc() - read()
+- Linha 16 - fputc() - write()
 - Linha 15 e 16 - fclose() - close()
 
 # Modo de execução

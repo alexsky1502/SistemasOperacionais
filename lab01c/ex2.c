@@ -2,17 +2,22 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]){
-	char texto[100];
+	char texto;
 	FILE *old, *new;
+
 	if (argv[1] == NULL || argv[2] == NULL) {
 		printf("modo de uso: ./cp /path/to/file /path/to/file");
 		exit(1);
 	} 
+	
 	old = fopen(argv[1], "r");
-	fgets(texto, sizeof(texto), old);
-
     new = fopen(argv[2],"w");
-    fprintf(new,"%s",texto);
+   
+	texto = fgetc(old);
+    while (texto != EOF){
+        fputc(texto, new);
+        texto = fgetc(old);
+    }
     
 	fclose(old);
     fclose(new);
