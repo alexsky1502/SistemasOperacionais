@@ -12,11 +12,10 @@ pthread_mutex_t garfos[TOTAL_FILOSOFOS]; // array de mutex (o numero de garfos s
 void executa(void *arg)
 {
     int n = (int) arg;
-    int direita = (n + 1) % TOTAL_FILOSOFOS;
+    int direita = (n + 1) % TOTAL_FILOSOFOS; // ( ex: filosofo 3 => 3 + 1 mod 5 = 4 )
     int esquerda = n;
 
     while (1){
-        // ( ex: filosofo 3 => 3 + 1 mod 5 = 4 )
         printf("\n filosofo %d pensando! ", n);
         sleep((rand() % 10)); // pensa por um tempo aleatório entre 1 e 10 segundos
 
