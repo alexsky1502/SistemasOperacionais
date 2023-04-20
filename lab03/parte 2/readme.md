@@ -1,15 +1,20 @@
+## Sem mutex e busy wait
+```
+com n = 100000000 termos,
+com 1 threads,
+pi estimado = 3.14159264
+```
+```
+com n = 100000000 termos,
+com 2 threads,
+pi estimado = 3.14159264
+```
 ## Com busy wait
 ```
 busy wait
 com n = 100000000 termos,
 com 1 threads,
 pi estimado = 3.141592643589326
-```
-```
-busy wait
-com n = 100 termos,
-com 5 threads,
-pi estimado = 3.131592903558554
 ```
 ```
 busy wait
@@ -24,12 +29,6 @@ mutexes
 com n = 100000000 termos,
 com 1 threads,
 pi estimado = 3.141592643589326
-```
-```
-mutexes
-com n = 100 termos,
-com 5 threads,
-pi estimado = 3.131592903558554
 ```
 ```
 mutexes
