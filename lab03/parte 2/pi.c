@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     printf("com race condition\n");
     printf("com n = %lld termos,\n", n);
     printf("com %ld threads,\n", thread_count);
-    printf("pi estimado = %.8f\n", sum);
+    printf("pi estimado = %.30f\n", sum);
    free(thread_handles);
    return 0;
 }  
