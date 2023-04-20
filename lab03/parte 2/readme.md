@@ -45,6 +45,6 @@ com 2 threads,
 pi estimado = 3.14159264
 ```
 
+## Explicações
 
-
-Conforme aumentamos o número de termos, aumentar o número de threads nos aproxima mais do resultado correto.
+O uso de mutexes ou busy wait evita race conditions no acesso à variável sum. Dessa forma, o resultado final torna-se mais preciso. Além disso, conforme aumentamos o número de termos, aumentar o número de threads nos aproxima mais do resultado correto.
