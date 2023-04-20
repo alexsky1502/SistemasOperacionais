@@ -67,4 +67,6 @@ pi estimado = 3.141592643589816713500795231084
 
 ## Explicações
 
-O uso de mutexes ou busy wait evita race conditions no acesso à variável sum. Dessa forma, o resultado final torna-se mais preciso. Além disso, conforme aumentamos o número de termos, aumentar o número de threads nos aproxima mais do resultado correto.
+A) Conforme aumentamos o numero de N, o desempenho com apenas uma thread melhora. 
+
+B) O busy wait continua usando o processador mesmo sem realizar nenhum trabalho útil enquanto espera a liberação. Os mutexes liberam o processador para que outras tarefas possam usá-lo.
