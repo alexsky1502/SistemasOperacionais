@@ -4,7 +4,7 @@
 busy wait
 com n = 100000000 termos,
 com 2 threads,
-pi estimado = 3.3.141592643589817
+pi estimado = 3.141592643589817
 ```
 
 ## Com mutexes
