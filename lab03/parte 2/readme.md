@@ -1,3 +1,11 @@
+
+## Valor real de pi
+```
+mutexes
+com n = 100000000 termos,
+pi = 3.14159265
+```
+
 ## Sem mutex e busy wait
 ```
 com n = 100000000 termos,
@@ -14,13 +22,13 @@ pi estimado = 3.14159264
 busy wait
 com n = 100000000 termos,
 com 1 threads,
-pi estimado = 3.141592643589326
+pi estimado = 3.14159264
 ```
 ```
 busy wait
 com n = 100000000 termos,
 com 2 threads,
-pi estimado = 3.141592643589817
+pi estimado = 3.14159264
 ```
 
 ## Com mutexes
@@ -28,21 +36,15 @@ pi estimado = 3.141592643589817
 mutexes
 com n = 100000000 termos,
 com 1 threads,
-pi estimado = 3.141592643589326
+pi estimado = 3.14159264
 ```
 ```
 mutexes
 com n = 100000000 termos,
 com 2 threads,
-pi estimado = 3.141592643589817
+pi estimado = 3.14159264
 ```
 
-## Valor de pi
-```
-mutexes
-com n = 100000000 termos,
-pi = 3.14159265
-```
 
 
 Conforme aumentamos o número de termos, aumentar o número de threads nos aproxima mais do resultado correto.
