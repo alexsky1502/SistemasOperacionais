@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
       pthread_join(thread_handles[thread], NULL); 
 
    sum = 4.0*sum;
-    printf("busy wait\n");
+    printf("com race condition\n");
     printf("com n = %lld termos,\n", n);
     printf("com %ld threads,\n", thread_count);
     printf("pi estimado = %.8f\n", sum);
