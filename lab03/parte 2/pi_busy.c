@@ -3,7 +3,7 @@
 #include <math.h>
 #include <pthread.h>
 
-long thread_count = 5;
+long thread_count = 2;
 long long n = pow(10,8);
 int flag;
 double sum;
@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     printf("busy wait\n");
     printf("com n = %lld termos,\n", n);
     printf("com %ld threads,\n", thread_count);
-    printf("pi estimado = %.8f\n", sum);
+    printf("pi estimado = %.30f\n", sum);
    free(thread_handles);
    return 0;
 }  
@@ -61,4 +61,3 @@ void* Thread_sum(void* rank) {
 
    return NULL;
 } 
-
