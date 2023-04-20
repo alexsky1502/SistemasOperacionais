@@ -21,3 +21,6 @@ mutexes
 com n = 100000000 termos,
 pi = 3.14159265
 ```
+
+
+Conforme aumentamos o número de termos, aumentar o número de threads nos aproxima mais do resultado correto.
