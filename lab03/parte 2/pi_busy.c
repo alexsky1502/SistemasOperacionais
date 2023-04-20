@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     printf("busy wait\n");
     printf("com n = %lld termos,\n", n);
     printf("com %ld threads,\n", thread_count);
-    printf("pi estimado = %.15f\n", sum);
+    printf("pi estimado = %.8f\n", sum);
    free(thread_handles);
    return 0;
 }  
