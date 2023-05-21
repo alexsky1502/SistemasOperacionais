@@ -6,66 +6,97 @@
 #include <signal.h>
 #include <sched.h>
 #include <stdio.h>
+#include <pthread.h>
+#include <time.h>
 
 // 64kB stack
 #define FIBER_STACK 1024*64
+#define VALOR_TRANSFERENCIA 10
+#define NUMERO_TRANSFERENCIAS 100
 
 struct c {
- int saldo;
+  int saldo;
+  char id;
 };
 typedef struct c conta;
 
-conta from, to;
-int valor;
+pthread_mutex_t mutex;
+
+conta A, B;
+int valor = VALOR_TRANSFERENCIA;
+
+void transferA(){
+    
+    printf("Transferindo %d da conta %c para conta %c\n", valor, A.id, B.id);
+    if (A.saldo >= valor){                  
+      A.saldo -= valor;
+      B.saldo += valor;
+      printf("Transferencia concluída com sucesso!\n");
+    }else{
+      printf("saldo insuficiente!\n");  
+    }
+    
+}
+
+void transferB(){
+    
+    printf("Transferindo %d da conta %c para conta %c\n", valor, B.id, A.id);
+    if (B.saldo >= valor){                  
+      B.saldo -= valor;
+      A.saldo += valor;
+      printf("Transferencia concluída com sucesso!\n");
+    }else{
+      printf("saldo insuficiente!\n");  
+    }
+    
+}
+
 
 // The child thread will execute this function
-int transferencia( void *arg)
+void *transferencia( void *origem)
 {
-    if (from.saldo >= valor){ // 2
-    from.saldo -= valor;
-    to.saldo += valor;
-    }
-    printf("Transferência concluída com sucesso!\n");
-    printf("Saldo de c1: %d\n", from.saldo);
-    printf("Saldo de c2: %d\n", to.saldo);
-    return 0;
+    pthread_mutex_lock(&mutex);
+    
+    char *contaOrigem = (char*) origem;
+    printf("------\n");
+    printf("Saldo da conta %c: %d\n", A.id, A.saldo);
+    printf("Saldo da conta %c: %d\n", B.id, B.saldo);
+    
+    
+    if (*contaOrigem == 'A')
+        transferA();
+    else
+        transferB();
+    
+    pthread_mutex_unlock(&mutex);
 }
 
 int main()
 {
-    void* stack;
-    pid_t pid;
-    int i;
+    pthread_t threads[NUMERO_TRANSFERENCIAS];
 
-    // Allocate the stack
-    stack = malloc( FIBER_STACK );
-    if ( stack == 0 )
-    {
-    perror("malloc: could not allocate stack");
-    exit(1);
-    }
-
+    pthread_mutex_init(&mutex, NULL);
+    
     // Todas as contas começam com saldo 100
-    from.saldo = 100;
-    to.saldo = 100;
+    A.saldo = 100;
+    A.id = 'A';
+    
+    B.saldo = 100;
+    B.id = 'B';
+    
+    char contas[2]= {'A','B'};
+    char contaSorteada;
+    int numAleatorio;
+    srand((long) time(NULL));
 
-    printf( "Transferindo 10 para a conta c2\n" );
-    valor = 10;
-
-    for (i = 0; i < 100; i++) {
-    // Call the clone system call to create the child thread
-    pid = clone( &transferencia, (char*) stack + FIBER_STACK,
-        SIGCHLD | CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
-    if ( pid == -1 )
-    {
-        perror( "clone" );
-        exit(2);
+    for (int i = 0; i < NUMERO_TRANSFERENCIAS; i++) {
+        numAleatorio = rand()%2;
+        contaSorteada = contas[numAleatorio];
+        pthread_create(&threads[i], NULL, *transferencia, (void *) &contaSorteada);
     }
 
-    }
+    pthread_mutex_destroy(&mutex);
 
-    // Free the stack
-    free( stack );
-    printf("Transferências concluídas e memória liberada.\n");
     return 0;
 }
+
